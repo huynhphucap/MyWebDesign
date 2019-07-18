@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DetailFilmComponent } from './detail-film/detail-film.component';
 import { WatchFilmComponent } from './watch-film/watch-film.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { WatchFilmComponent } from './watch-film/watch-film.component';
     HomeComponent,
     NavbarComponent,
     DetailFilmComponent,
-    WatchFilmComponent
+    WatchFilmComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
