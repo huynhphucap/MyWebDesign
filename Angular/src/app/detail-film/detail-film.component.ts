@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DetailService } from 'src/services/detail.service';
 
 @Component({
   selector: 'app-detail-film',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailFilmComponent implements OnInit {
 
-  constructor() { }
+  constructor( private detailService: DetailService) { }
 
+  dataDetail: Array<any>;
   ngOnInit() {
+    this.detailService.getDetailFilm().subscribe( data => this.dataDetail = data);
+    console.log(this.dataDetail)
   }
 
 }
