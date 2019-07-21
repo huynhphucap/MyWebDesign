@@ -1,6 +1,8 @@
-.card-group{
-    margin: auto;
-}
+
+.flex-container {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+  }
 .card{
     width: 250px;
 }

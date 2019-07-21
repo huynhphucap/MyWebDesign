@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DetailFilmComponent } from './detail-film/detail-film.component';
 import { WatchFilmComponent } from './watch-film/watch-film.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CarouselComponent } from './carousel/carousel.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
