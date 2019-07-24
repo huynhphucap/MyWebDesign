@@ -1,18 +1,26 @@
-var express= require("express");
-var cors = require("cors");
-var bodyParser = require("body-parser");
-var app = express()
-var port  = process.env.PORT || 3000
+const { mysql } = require('./database/db.js');
 
-app.use(bodyParser.json);
-app.use(cors())
-app.use(
-    bodyParser.urlencoded({extended:false})
-)
-var Users = require("./routes/Users");
-
-app.use("/users", Users)
-
-app.listen(port, function(){
-    console.log("Server is running on port" + port);
-})
+// Bước 1: Import module http
+var http = require('http');
+ 
+// Bước 2: Khởi tạo server
+var server = http.createServer(function(request, response){
+    // Biến request: là biến lưu trữ thông tin gửi lên của client
+    // Biến response: là biến lưu trữ các thông tin trả về cho client
+     
+    // Thiết lập Header
+    response.writeHead(200, {
+        "Context-type" : "text/plain"
+    });
+     
+    // Show thông tin
+    response.write('Your URL is ' + request.url);
+     
+    // Kết thúc
+    response.end();
+});
+ 
+// Bước 3: Lắng nghe cổng 300 thì thực hiện chương trình
+server.listen(3001, function(){
+    console.log('Connected Successfull in 3001!');
+});
