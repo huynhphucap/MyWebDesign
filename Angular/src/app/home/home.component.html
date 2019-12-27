@@ -1,17 +1,17 @@
 <carousel class="carousel"></carousel>
-<div class="container" *ngFor="let item of data" >
+<div class="container" *ngFor="let item of data">
   <div class="d-flex flex-column" style="float: left">
     <div class="card" style="width: 18rem;margin-top: 50px;">
       <img class="card-img-top" src="../../assets/images/poster.thumb (1).jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{item.label}}</h5>
-        <div *ngIf ="isCollapsed">
-            <button type="button" class="btn btn-link" (click) = "hide()">More</button>
-            <p class="card-text">{{(item.text.length>6)? (item.text | slice:0:22)+'...':(item.text)}}</p>
-          </div>
-        <div *ngIf ="!isCollapsed">
-            <button type="button" class="btn btn-link" (click) = "hide()">Less</button>
-            <p class="card-text">{{item.text}}</p>
+        <div *ngIf="isCollapsed">
+          <button type="button" class="btn btn-link" (click)="hide()">More</button>
+          <p class="card-text">{{(item.text.length>6)? (item.text | slice:0:22)+'...':(item.text)}}</p>
+        </div>
+        <div *ngIf="!isCollapsed">
+          <button type="button" class="btn btn-link" (click)="hide()">Less</button>
+          <p class="card-text">{{item.text}}</p>
         </div>
         <a href="#" class="btn btn-primary" routerLink="/detail-film">Go somewhere</a>
       </div>
